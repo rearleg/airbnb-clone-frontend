@@ -37,3 +37,8 @@ export default function GithubConfirm() {
     </VStack>
   );
 }
+
+const Sexc = () => {
+  return console.log("hello");
+};
+Sexc();

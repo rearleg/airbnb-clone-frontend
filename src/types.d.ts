@@ -22,13 +22,21 @@ export interface IRoomOwner {
 }
 
 export interface IAmenity {
+  pk: number;
   name: string;
   description: string;
+}
+
+export interface ICategory {
+  pk: number;
+  name: string;
+  kind: string;
 }
 
 export interface IRoomDetail extends IRoomList {
   created_at: string;
   updated_at: string;
+  file: string;
   rooms: number;
   toilet: number;
   description: string;
@@ -37,10 +45,7 @@ export interface IRoomDetail extends IRoomList {
   kind: string;
   is_owner: boolean;
   is_liked: boolean;
-  category: {
-    name: string;
-    kind: string;
-  };
+  category: ICategory;
   owner: IRoomOwner;
   amenities: IAmenity[];
 }
@@ -50,7 +55,6 @@ export interface IReview {
   rating: number;
   user: IRoomOwner;
 }
-
 
 export interface IUser {
   last_login: string;
